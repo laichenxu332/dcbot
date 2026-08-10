@@ -1,4 +1,4 @@
 discord.py
 yt_dlp
 imageio_ffmpeg
-PyNaCl
+PyNaCl 
