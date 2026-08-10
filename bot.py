@@ -33,7 +33,7 @@ YTDL_OPTIONS = {
     'source_address': '0.0.0.0',
     'extractor_args': {
         'youtube': {
-            'player_client': ['ios']
+            'player_client': ['mweb', 'tvhtml5', 'ios']
         }
     }
 }
