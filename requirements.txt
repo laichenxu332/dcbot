@@ -1,5 +1,5 @@
 discord.py
-yt_dlp
+git+https://github.com/yt-dlp/yt-dlp.git
 imageio_ffmpeg
 PyNaCl
-davey 
+davey
