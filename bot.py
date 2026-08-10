@@ -1,18 +1,12 @@
 import discord
-from discord import app_commands
 from discord.ext import commands
-import yt_dlp
-import asyncio
-import imageio_ffmpeg
-import datetime
-from collections import defaultdict, deque
 
-# 設定機器人 Intents (必須開啟 message_content 與 members 才能偵測訊息與成員)
 intents = discord.Intents.default()
 intents.message_content = True
-intents.members = True
+intents.voice_states = True
+intents.members = True  # 確保包含這行
 
-bot = commands.Bot(command_prefix="!", intents=intents)
+bot = commands.Bot(command_prefix='!', intents=intents)    
 
 # FFmpeg 與 yt-dlp 設定
 FFMPEG_OPTIONS = {
