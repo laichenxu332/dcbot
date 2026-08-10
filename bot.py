@@ -31,13 +31,13 @@ YTDL_OPTIONS = {
     'no_warnings': True,
     'default_search': 'auto',
     'source_address': '0.0.0.0',
+    'cookiefile': 'cookies.txt',  # 新增這一行
     'extractor_args': {
         'youtube': {
             'player_client': ['mweb', 'tvhtml5', 'ios']
         }
     }
 }
-
 # ==================== 防詐騙與防炸群設定 ====================
 
 # 1. 詐騙關鍵字黑名單
