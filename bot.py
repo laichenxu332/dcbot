@@ -320,5 +320,6 @@ async def admin_command_error(interaction: discord.Interaction, error: app_comma
     if isinstance(error, app_commands.MissingPermissions):
         await interaction.response.send_message("❌ 你沒有權限使用此管理指令！", ephemeral=True)
 
-# ⚠️ 請將下方引號內的字串替換為你的 Bot Token
-bot.run('MTUyODY4ODEzMzg4ODE0NzU1OA.Gk7ZBo.IhcS-s-NUiWR16Sg6btIaILql6JISoLp-Zc9CY')
+import os
+
+bot.run(os.getenv('DISCORD_TOKEN'))
