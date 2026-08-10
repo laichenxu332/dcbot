@@ -99,7 +99,14 @@ async def play_next(interaction: discord.Interaction):
 async def play(interaction: discord.Interaction, url: str):
     await interaction.response.defer()
     
+    # 強制向 Discord API 精確抓取當前成員的語音狀態
     member = interaction.guild.get_member(interaction.user.id)
+    if not member or not member.voice:
+        try:
+            member = await interaction.guild.fetch_member(interaction.user.id)
+        except Exception:
+            pass
+
     if not member or not member.voice or not member.voice.channel:
         await interaction.followup.send("❌ 請先加入一個語音頻道！")
         return
@@ -139,7 +146,7 @@ async def play(interaction: discord.Interaction, url: str):
 async def skip(interaction: discord.Interaction):
     voice_client = interaction.guild.voice_client
     if voice_client and voice_client.is_playing():
-        voice_client.stop()  # 停止當前歌曲，自動觸發 play_next 播放下一首
+        voice_client.stop()
         await interaction.response.send_message("⏭️ 已跳過當前歌曲！")
     else:
         await interaction.response.send_message("❌ 目前沒有正在播放的歌曲！")
