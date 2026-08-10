@@ -21,7 +21,7 @@ FFMPEG_OPTIONS = {
 }
 
 YTDL_OPTIONS = {
-    'format': 'bestaudio/best',
+    'format': 'best',  # 改為 best
     'extract_flat': False,
     'noplaylist': True,
     'nocheckcertificate': True,
@@ -31,7 +31,6 @@ YTDL_OPTIONS = {
     'no_warnings': True,
     'default_search': 'auto',
     'source_address': '0.0.0.0',
-    'cookiefile': 'cookies.txt',  # 新增這一行
     'extractor_args': {
         'youtube': {
             'player_client': ['mweb', 'tvhtml5', 'ios']
