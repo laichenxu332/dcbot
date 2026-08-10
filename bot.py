@@ -1,4 +1,6 @@
+from collections import defaultdict, deque
 import discord
+from discord.ext import commands
 from discord.ext import commands
 
 intents = discord.Intents.default()
