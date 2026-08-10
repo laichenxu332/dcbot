@@ -22,8 +22,20 @@ FFMPEG_OPTIONS = {
 
 YTDL_OPTIONS = {
     'format': 'bestaudio/best',
+    'extract_flat': False,
     'noplaylist': True,
+    'nocheckcertificate': True,
+    'ignoreerrors': False,
+    'logtostderr': False,
     'quiet': True,
+    'no_warnings': True,
+    'default_search': 'auto',
+    'source_address': '0.0.0.0',
+    'extractor_args': {
+        'youtube': {
+            'player_client': ['android', 'web']
+        }
+    }
 }
 
 # ==================== 防詐騙與防炸群設定 ====================
